@@ -1,0 +1,14 @@
+version: '3'
+services:
+  balancer:
+    build: ./balancer
+    ports:
+      - "8000:5000"
+    depends_on:
+      - worker1
+      - worker2
+
+  worker1:
+    build: ./worker
+  worker2:
+    build: ./worker
